@@ -35,13 +35,18 @@ public class JavaFXMain extends Application {
         HBox root2 = new HBox();
         
         for(int i=0; i<3; i++){
-            Button test = new Button ("Start");
-            root2.getChildren().add(test);
+            if(i == 0){
+                Button test = new Button ("Sound");
+                root2.getChildren().add(test);
+            }else{
+                Button test = new Button ("Type");
+                root2.getChildren().add(test);
+            }
         }
         root2.setLayoutX(40);
-        root2.setLayoutY(400);
+        root2.setLayoutY(10);
         root.getChildren().add(root2);    
-        Scene scene = new Scene (root, 640, 480);
+        Scene scene = new Scene (root, 1280, 500);
         primaryStage.setTitle("Tugas PBO");
         primaryStage.setScene(scene);
         primaryStage.show();
