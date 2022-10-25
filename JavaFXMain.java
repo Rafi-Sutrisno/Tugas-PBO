@@ -9,30 +9,33 @@ import javafx.stage.Stage;
 public class JavaFXMain extends Application {
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage Test) {
         //remove code from here 
 	Button btn = new Button();
-        btn.setText("Say 'HelloWorld'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
+        Button exit  = new Button();
+        btn.setText("Hallo Siap Mulai");
+        exit.setText("Exit");
+        btn.setLayoutX(70);
+        btn.setLayoutY(70);
+        
+        exit.setLayoutX(100);
+        exit.setLayoutY(100);
+        if(btn.isPressed()){
+            System.out.println("Is Clicked");
+        }
+        btn.setOnAction(new EventHandler<ActionEvent>() { 
             @Override
             public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
+                System.out.println("Clicked");
             }
         });
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-	//to here to add your own code
+        Test.setTitle("Hello World!");
+        Test.show();
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 }
+
